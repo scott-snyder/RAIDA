@@ -92,7 +92,8 @@ INSTALL( PROGRAMS "./bin/aida-config" "./bin/aida-setup.sh" DESTINATION bin )
 DISPLAY_STD_VARIABLES()
 
 # generate and install following configuration files
-GENERATE_PACKAGE_CONFIGURATION_FILES( RAIDAConfig.cmake RAIDAConfigVersion.cmake AIDAConfig.cmake AIDAConfigVersion.cmake RAIDALibDeps.cmake )
+GENERATE_PACKAGE_CONFIGURATION_FILES( RAIDAConfig.cmake RAIDAConfigVersion.cmake AIDAConfig.cmake AIDAConfigVersion.cmake  )
+INSTALL (FILES ${PROJECT_SOURCE_DIR}/cmake/RAIDALibDeps.cmake DESTINATION lib/cmake )
 
 # Make a symbolic link in lib/cmake from RAIDA to AIDA to make sure that find_package(AIDA) works
 install(CODE "
