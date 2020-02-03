@@ -95,6 +95,7 @@ DISPLAY_STD_VARIABLES()
 # generate and install following configuration files
 GENERATE_PACKAGE_CONFIGURATION_FILES( RAIDAConfig.cmake RAIDAConfigVersion.cmake AIDAConfig.cmake AIDAConfigVersion.cmake )
 INSTALL( EXPORT RAIDATargets FILE RAIDATargets.cmake NAMESPACE RAIDA:: DESTINATION lib/cmake/RAIDA )
+INSTALL (FILES ${PROJECT_SOURCE_DIR}/cmake/RAIDALibDeps.cmake DESTINATION lib/cmake )
 
 # Make a symbolic link in lib/cmake from RAIDA to AIDA to make sure that find_package(AIDA) works
 install(CODE "
