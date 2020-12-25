@@ -61,11 +61,12 @@ IProfile1DROOT::IProfile1DROOT(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanX->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _profile->GetXaxis() );
+  auto xaxis = new IAxisROOT( _profile->GetXaxis() );
+  _xAxis = xaxis;
   if ( profile._xAxis->isFixedBinning() )
-    dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+    xaxis->setFixedBinning();
   else
-    dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning() ;
+    xaxis->setVariableBinning() ;
 }
 
 IProfile1DROOT::IProfile1DROOT(const std::string & name,
@@ -128,8 +129,9 @@ void IProfile1DROOT::Profile1DHistograms(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanX->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _profile->GetXaxis() );
-  dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+  auto xaxis = new IAxisROOT( _profile->GetXaxis() );
+  _xAxis = xaxis;
+  xaxis->setFixedBinning();
 }
 
 void IProfile1DROOT::Profile1DHistograms(const std::string & name,
@@ -157,8 +159,9 @@ void IProfile1DROOT::Profile1DHistograms(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanX->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _profile->GetXaxis() );
-  dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning();
+  auto xaxis = new IAxisROOT( _profile->GetXaxis() );
+  _xAxis = xaxis;
+  xaxis->setVariableBinning();
 }
 
 bool IProfile1DROOT::fill(double x, double y, double weight)
