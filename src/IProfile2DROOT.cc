@@ -128,17 +128,19 @@ IProfile2DROOT::IProfile2DROOT(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanY->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _profile->GetXaxis() );
+  auto xaxis = new IAxisROOT( _profile->GetXaxis() );
+  _xAxis = xaxis;
   if ( profile._xAxis->isFixedBinning() )
-    dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+    xaxis->setFixedBinning();
   else
-    dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning() ;
+    xaxis->setVariableBinning() ;
 
-  _yAxis = new IAxisROOT( _profile->GetYaxis() );
+  auto yaxis = new IAxisROOT( _profile->GetYaxis() );
+  _yAxis = yaxis;
   if ( profile._yAxis->isFixedBinning() )
-    dynamic_cast<IAxisROOT*>(_yAxis)->setFixedBinning();
+    yaxis->setFixedBinning();
   else
-    dynamic_cast<IAxisROOT*>(_yAxis)->setVariableBinning() ;
+    yaxis->setVariableBinning() ;
 }
 
 void IProfile2DROOT::Profile2DHistograms(const std::string & name,
@@ -183,11 +185,13 @@ void IProfile2DROOT::Profile2DHistograms(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanY->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _profile->GetXaxis() );
-  dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+  auto xaxis = new IAxisROOT( _profile->GetXaxis() );
+  _xAxis = xaxis;
+  xaxis->setFixedBinning();
 
-  _yAxis = new IAxisROOT( _profile->GetYaxis() );
-  dynamic_cast<IAxisROOT*>(_yAxis)->setFixedBinning();
+  auto yaxis = new IAxisROOT( _profile->GetYaxis() );
+  _yAxis = yaxis;
+  yaxis->setFixedBinning();
 }
 
 void IProfile2DROOT::Profile2DHistograms(const std::string & name,
@@ -229,11 +233,13 @@ void IProfile2DROOT::Profile2DHistograms(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanY->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _profile->GetXaxis() );
-  dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning();
+  auto xaxis = new IAxisROOT( _profile->GetXaxis() );
+  _xAxis = xaxis;
+  xaxis->setVariableBinning();
 
-  _yAxis = new IAxisROOT( _profile->GetYaxis() );
-  dynamic_cast<IAxisROOT*>(_yAxis)->setVariableBinning();
+  auto yaxis = new IAxisROOT( _profile->GetYaxis() );
+  _yAxis = yaxis;
+  yaxis->setVariableBinning();
 }
 
 bool IProfile2DROOT::fill(double x, double y, double z, double weight) 
