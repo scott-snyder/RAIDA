@@ -78,10 +78,12 @@ IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanY->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _histogram->GetXaxis() );
-  dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
-  _yAxis = new IAxisROOT( _histogram->GetYaxis() );
-  dynamic_cast<IAxisROOT*>(_yAxis)->setFixedBinning();
+  auto xaxis = new IAxisROOT( _histogram->GetXaxis() );
+  _xAxis = xaxis;
+  xaxis->setFixedBinning();
+  auto yaxis = new IAxisROOT( _histogram->GetYaxis() );
+  _yAxis = yaxis;
+  yaxis->setFixedBinning();
 }
 
 IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
@@ -121,10 +123,12 @@ IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
   if (!AIDAHistogramsInROOT)
     _histogramAIDABinMeanY->SetDirectory(0);
   // create axis
-  _xAxis = new IAxisROOT( _histogram->GetXaxis() );
-  dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning();
-  _yAxis = new IAxisROOT( _histogram->GetYaxis() );
-  dynamic_cast<IAxisROOT*>(_yAxis)->setVariableBinning();
+  auto xaxis = new IAxisROOT( _histogram->GetXaxis() );
+  _xAxis = xaxis;
+  xaxis->setVariableBinning();
+  auto yaxis = new IAxisROOT( _histogram->GetYaxis() );
+  _yAxis = yaxis;
+  yaxis->setVariableBinning();
 }
 
 IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
@@ -142,17 +146,19 @@ IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
     _histogramAIDABinMeanY->SetDirectory(0);
 
   // create axis
-  _xAxis = new IAxisROOT( _histogram->GetXaxis() );
+  auto xaxis = new IAxisROOT( _histogram->GetXaxis() );
+  _xAxis = xaxis;
   if ( hist._xAxis->isFixedBinning() )
-    dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+    xaxis->setFixedBinning();
   else
-    dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning() ;
+    xaxis->setVariableBinning() ;
 
-  _yAxis = new IAxisROOT( _histogram->GetYaxis() );
+  auto yaxis = new IAxisROOT( _histogram->GetYaxis() );
+  _yAxis = yaxis;
   if ( hist._yAxis->isFixedBinning() )
-    dynamic_cast<IAxisROOT*>(_yAxis)->setFixedBinning();
+    yaxis->setFixedBinning();
   else
-    dynamic_cast<IAxisROOT*>(_yAxis)->setVariableBinning() ;
+    yaxis->setVariableBinning() ;
 }
 
 IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
@@ -222,16 +228,18 @@ IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
       hist._histogramAIDABinMeanY->GetZaxis()->SetRange(lowerZBin,upperZBin);
       
       // create axis
-      _xAxis = new IAxisROOT( _histogram->GetXaxis() );
+      auto xaxis = new IAxisROOT( _histogram->GetXaxis() );
+      _xAxis = xaxis;
       if ( hist._xAxis->isFixedBinning() )
-	dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+	xaxis->setFixedBinning();
       else
-	dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning() ;
-      _yAxis = new IAxisROOT( _histogram->GetYaxis() );
+	xaxis->setVariableBinning() ;
+      auto yaxis = new IAxisROOT( _histogram->GetYaxis() );
+      _yAxis = yaxis;
       if ( hist._yAxis->isFixedBinning() )
-	dynamic_cast<IAxisROOT*>(_yAxis)->setFixedBinning();
+	yaxis->setFixedBinning();
       else
-	dynamic_cast<IAxisROOT*>(_yAxis)->setVariableBinning() ;
+	yaxis->setVariableBinning() ;
     }
   else if (axis == "xz")
     {
@@ -291,16 +299,18 @@ IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
       hist._histogramAIDABinMeanY->GetYaxis()->SetRange(lowerYBin,upperYBin);
 
       // create axis
-      _xAxis = new IAxisROOT( _histogram->GetXaxis() );
+      auto xaxis =new IAxisROOT( _histogram->GetXaxis() );
+      _xAxis = xaxis;
       if ( hist._xAxis->isFixedBinning() )
-        dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+        xaxis->setFixedBinning();
       else
-        dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning() ;
-      _yAxis = new IAxisROOT( _histogram->GetYaxis() );
+        xaxis->setVariableBinning() ;
+      auto yaxis = new IAxisROOT( _histogram->GetYaxis() );
+      _yAxis = yaxis;
       if ( hist._zAxis->isFixedBinning() )
-        dynamic_cast<IAxisROOT*>(_yAxis)->setFixedBinning();
+        yaxis->setFixedBinning();
       else
-        dynamic_cast<IAxisROOT*>(_yAxis)->setVariableBinning() ;
+        yaxis->setVariableBinning() ;
     }
   else if (axis == "yz")
     {
@@ -360,16 +370,18 @@ IHistogram2DROOT::IHistogram2DROOT(const std::string & name,
       hist._histogramAIDABinMeanY->GetXaxis()->SetRange(lowerXBin,upperXBin);
 
       // create axis
-      _xAxis = new IAxisROOT( _histogram->GetXaxis() );
+      auto xaxis = new IAxisROOT( _histogram->GetXaxis() );
+      _xAxis = xaxis;
       if ( hist._yAxis->isFixedBinning() )
-        dynamic_cast<IAxisROOT*>(_xAxis)->setFixedBinning();
+        xaxis->setFixedBinning();
       else
-        dynamic_cast<IAxisROOT*>(_xAxis)->setVariableBinning() ;
-      _yAxis = new IAxisROOT( _histogram->GetYaxis() );
+        xaxis->setVariableBinning() ;
+      auto yaxis = new IAxisROOT( _histogram->GetYaxis() );
+      _yAxis = yaxis;
       if ( hist._zAxis->isFixedBinning() )
-        dynamic_cast<IAxisROOT*>(_yAxis)->setFixedBinning();
+        yaxis->setFixedBinning();
       else
-        dynamic_cast<IAxisROOT*>(_yAxis)->setVariableBinning() ;
+        yaxis->setVariableBinning() ;
     }
 
   // change the name of the Histogram
