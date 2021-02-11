@@ -1,7 +1,8 @@
 Version: 1
-Previous: 3f14261b17b542a5e1baddf09170747e7bef654f
-Head: 076c652aca6e349f8f0a4701f6fcb314af75923b
+Previous: 44a530312fa9d0786deaedefe279695ada5ed17c
+Head: b4c8e96d30487dbdc04b23366d5827eede339b31
 Applied:
   libdeps: 076c652aca6e349f8f0a4701f6fcb314af75923b
+  gitignore: b4c8e96d30487dbdc04b23366d5827eede339b31
 Unapplied:
 Hidden:
