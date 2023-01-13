@@ -9,8 +9,8 @@
 #include "AIDA/ICloud1D.h"
 #include <AIDA/ITree.h>
 #include <RAIDA/PathName.h>
+#include <RAIDA/IAnnotationROOT.h>
 namespace AIDA {
-
 class IHistogram1D;
 
 /**
@@ -195,9 +195,9 @@ public:
    * @return The IAnnotation.
    *
    */
-  /// virtual IAnnotation & annotation() ;
+  virtual IAnnotation & annotation() { return _annotation; }
 
-  /// virtual const IAnnotation & annotation() const ;
+  virtual const IAnnotation & annotation() const  { return _annotation; }
 
   /**
    * Get the Histogram's dimension.
@@ -243,6 +243,8 @@ private:
 
   mutable double _histoLowerEdge;
   mutable double _histoUpperEdge;
+
+  IAnnotationROOT _annotation;
 }; // class
 } // namespace AIDA
 #endif /* ifndef AIDA_ICLOUD1DROOT_H */

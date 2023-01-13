@@ -8,7 +8,7 @@
 #define AIDA_ITUPLE_H 1
 
 //  This file is part of the AIDA library
-//  Copyright (C) 2002 by the AIDA team.  All rights reserved.
+//  Copyright (C) 2002, 2023 by the AIDA team.  All rights reserved.
 //  This library is free software and under the terms of the
 //  GNU Library General Public License described in the LGPL.txt 
 
@@ -63,9 +63,9 @@ public:
      * @return The ITuple's IAnnotation.
      *
      */
-  /// virtual IAnnotation & annotation() = 0;
+  virtual IAnnotation & annotation() = 0;
 
-  /// virtual const IAnnotation & annotation() const = 0;
+  virtual const IAnnotation & annotation() const = 0;
 
     /**
      * Fill a given column with a double.

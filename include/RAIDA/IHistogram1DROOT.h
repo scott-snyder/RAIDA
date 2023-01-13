@@ -5,6 +5,7 @@
 #include <AIDA/IHistogram1D.h>
 #include <RAIDA/IHistogram2DROOT.h>
 #include <RAIDA/IHistogram3DROOT.h>
+#include <RAIDA/IAnnotationROOT.h>
 
 #include <vector>
 #include <TH1D.h>
@@ -259,6 +260,16 @@ public:
    */
   virtual void printContents() const ;
 
+
+  /**
+   * Get the IAnnotation associated with the Histogram.
+   * @return The IAnnotation.
+   *
+   */
+  virtual IAnnotation & annotation() { return _annotation; }
+
+  virtual const IAnnotation & annotation() const  { return _annotation; }
+
 protected:
 
 
@@ -268,6 +279,7 @@ private:
   TH1D *_histogramAIDA;
   TH1D *_histogramAIDABinMean;
   IAxis *_xAxis;
+  IAnnotationROOT _annotation;
 }; // class
 } // namespace AIDA
 #endif /* ifndef AIDA_IHISTOGRAM1DROOT_H */

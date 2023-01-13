@@ -6,6 +6,7 @@
 #include <AIDA/IHistogram2D.h>
 #include <AIDA/IAxis.h>
 #include <RAIDA/IHistogram3DROOT.h>
+#include <RAIDA/IAnnotationROOT.h>
 
 #include <TH1D.h>
 #include <TH2D.h>
@@ -246,9 +247,9 @@ public:
    * @return The IAnnotation.
    *
    */
-  /// virtual IAnnotation & annotation() ;
+  virtual IAnnotation & annotation() { return _annotation; }
 
-  /// virtual const IAnnotation & annotation() const = 0;
+  virtual const IAnnotation & annotation() const  { return _annotation; }
 
   /**
    * Get the Histogram's dimension.
@@ -371,6 +372,7 @@ private:
   TH2D *_histogramAIDABinMeanY;
   IAxis *_xAxis;
   IAxis *_yAxis;
+  IAnnotationROOT _annotation;
 }; // class
 } // namespace AIDA
 #endif /* ifndef AIDA_IHISTOGRAM2DROOT_H */
