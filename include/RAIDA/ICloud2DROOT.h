@@ -9,6 +9,7 @@
 #include "AIDA/ICloud2D.h"
 #include <AIDA/ITree.h>
 #include <RAIDA/PathName.h>
+#include <RAIDA/IAnnotationROOT.h>
 
 namespace AIDA {
 
@@ -250,9 +251,9 @@ public:
    * @return The IAnnotation.
    *
    */
-  /// virtual IAnnotation & annotation() ;
+  virtual IAnnotation & annotation() { return _annotation; }
 
-  /// virtual const IAnnotation & annotation() const ;
+  virtual const IAnnotation & annotation() const  { return _annotation; }
 
   /**
    * Get the Histogram's dimension.
@@ -301,7 +302,7 @@ private:
   mutable double _histoUpperEdgeX;
   mutable double _histoLowerEdgeY;
   mutable double _histoUpperEdgeY;
-
+  IAnnotationROOT _annotation;
 }; // class
 } // namespace AIDA
 #endif /* ifndef AIDA_ICLOUD2DROOT_H */
