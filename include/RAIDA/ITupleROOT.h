@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <RAIDA/LeafPoint.h>
+#include <RAIDA/IAnnotationROOT.h>
 
 namespace AIDA {
 
@@ -65,9 +66,9 @@ public:
      * @return The ITuple's IAnnotation.
      *
      */
-  /// virtual IAnnotation & annotation() ;
+  virtual IAnnotation & annotation() { return _annotation; }
 
-  /// virtual const IAnnotation & annotation() const ;
+  virtual const IAnnotation & annotation() const  { return _annotation; }
 
     /**
      * Fill a given column with a double.
@@ -912,6 +913,7 @@ protected:
   std::vector<LeafPoint> _pointVec;
   mutable std::vector<LeafPoint> _readPointVec;
   mutable int _readCursor;
+  IAnnotationROOT _annotation;
 }; // class
 } // namespace AIDA
 #endif /* ifndef AIDA_ITUPLEROOT_H */

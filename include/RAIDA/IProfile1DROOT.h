@@ -4,6 +4,7 @@
 
 #include <AIDA/IProfile1D.h>
 #include <AIDA/IAxis.h>
+#include <RAIDA/IAnnotationROOT.h>
 
 #include <vector>
 #include <TH1D.h>
@@ -205,9 +206,9 @@ public:
    * @return The IAnnotation.
    *
    */
-  /// virtual IAnnotation & annotation() ;
+  virtual IAnnotation & annotation() { return _annotation; }
 
-  /// virtual const IAnnotation & annotation() const ;
+  virtual const IAnnotation & annotation() const  { return _annotation; }
 
   /**
    * Get the Histogram's dimension.
@@ -256,6 +257,7 @@ private:
   TH1D*     _histogramAIDA;
   TH1D*     _histogramAIDABinMeanX;
   IAxis *_xAxis;
+  IAnnotationROOT _annotation;
 
 }; // class
 } // namespace AIDA
