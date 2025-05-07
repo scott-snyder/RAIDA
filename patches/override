@@ -1,0 +1,6 @@
+Bottom: e86d020e3cadd68c7cecf4ec15227e4a5d20955a
+Top:    e86d020e3cadd68c7cecf4ec15227e4a5d20955a
+Author: sss <sss@karma>
+Date:   2025-05-07 09:58:46 -0400
+
+Define AIDA_HAS_CAST to avoid warning in Gaudi.

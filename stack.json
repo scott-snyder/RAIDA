@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "2211dd5ca8dcf301ace0230760add97839c6e1dc",
-  "head": "718203100560076e02e0a9dfa95af524bda31590",
+  "prev": "8042f35605d30fd725f8e83fc656cea0e6109bb1",
+  "head": "c19f9f385a50031d76a067bee8710cae910b235d",
   "applied": [
     "gitignore",
-    "libdeps"
+    "libdeps",
+    "override"
   ],
   "unapplied": [],
   "hidden": [],
@@ -14,6 +15,9 @@
     },
     "libdeps": {
       "oid": "718203100560076e02e0a9dfa95af524bda31590"
+    },
+    "override": {
+      "oid": "c19f9f385a50031d76a067bee8710cae910b235d"
     }
   }
 }
