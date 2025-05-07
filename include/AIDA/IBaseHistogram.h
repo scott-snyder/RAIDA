@@ -8,11 +8,17 @@
 #define AIDA_IBASEHISTOGRAM_H 1
 
 //  This file is part of the AIDA library
-//  Copyright (C) 2002 by the AIDA team.  All rights reserved.
+//  Copyright (C) 2002, 2025 by the AIDA team.  All rights reserved.
 //  This library is free software and under the terms of the
 //  GNU Library General Public License described in the LGPL.txt 
 
 #include <string>
+
+// This tells Gaudi that we declare IBaseHistogram::cast as a virtual method.
+// Gaudi overrides it in a derived class, and having this macro defined
+// causes it to use the override keyword to avoid warnings about
+// inconsistent use of override.
+#define AIDA_HAS_CAST
 
 namespace AIDA {
 
