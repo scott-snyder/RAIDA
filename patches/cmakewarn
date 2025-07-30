@@ -1,0 +1,6 @@
+Bottom: bac327d514e9a3019abf015bba61bdf78b9a42e8
+Top:    bac327d514e9a3019abf015bba61bdf78b9a42e8
+Author: sss <sss@karma>
+Date:   2025-07-30 11:15:29 -0400
+
+Get rid of cmake warning about old minimum version.
