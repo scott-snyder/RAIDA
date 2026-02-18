@@ -1,6 +1,11 @@
 Bottom: e86d020e3cadd68c7cecf4ec15227e4a5d20955a
 Top:    491aa30337a1ce1fe0ef0a4717b66095f971f073
 Author: sss <sss@karma>
-Date:   2026-02-18 11:56:21 -0500
+Date:   2026-02-18 11:56:26 -0500
 
 Define AIDA_HAS_CAST to avoid warning in Gaudi.
+
+We declare IBaseHistogram::cast as a virtual method, and Gaudi overrides
+it in a derived class.  Defining AIDA_HAS_CAST tells Gaudi to use
+the override keyword for that method, as it does for other methods,
+to avoid warnings about inconsistent use of override.
