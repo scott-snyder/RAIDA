@@ -1,6 +1,6 @@
 Bottom: 256eba2bcdbd6317a7c90114bfc90bb4e4d298d5
 Top:    bb8b458327a5dd9beb3a0a8c79650359516a5aa3
 Author: sss <sss@karma>
-Date:   2026-02-18 15:51:13 -0500
+Date:   2026-02-18 15:51:38 -0500
 
-Get rid of cmake warning about old minimum version.
+Bump minimum cmake version to 3.10 to get rid of deprecation warnings.
