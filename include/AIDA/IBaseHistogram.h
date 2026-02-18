@@ -8,7 +8,7 @@
 #define AIDA_IBASEHISTOGRAM_H 1
 
 //  This file is part of the AIDA library
-//  Copyright (C) 2002, 2025 by the AIDA team.  All rights reserved.
+//  Copyright (C) 2002 by the AIDA team.  All rights reserved.
 //  This library is free software and under the terms of the
 //  GNU Library General Public License described in the LGPL.txt 
 
