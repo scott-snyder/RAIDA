@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "5b37e75751937151e08c58d10e8bc71f59b0f7ef",
-  "head": "f17751aa843849cf4bc7aa76d1f4532f8b225dfd",
-  "applied": [],
+  "prev": "78169dd1442ead34c33791ceb22709c351b61f3d",
+  "head": "555bd7a72a1412ceca3959b5afb6ed76f48dba99",
+  "applied": [
+    "override"
+  ],
   "unapplied": [
-    "override",
     "gitignore",
     "libdeps",
     "cmakewarn"
@@ -21,7 +22,7 @@
       "oid": "718203100560076e02e0a9dfa95af524bda31590"
     },
     "override": {
-      "oid": "a45dee8eb77d19196c25eba6223d0950ea4c6428"
+      "oid": "555bd7a72a1412ceca3959b5afb6ed76f48dba99"
     }
   }
 }
