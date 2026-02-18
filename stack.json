@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "c379ebe0f278ae0b9573132fbf88dec7ffdc5abc",
+  "prev": "c7368e8a260d1da7d3bf239200be25c3886ced11",
   "head": "1ae574c352ce26cdf0de264c1dd758621a849308",
   "applied": [
     "cmakewarn",
@@ -8,10 +8,10 @@
     "override",
     "gitignore"
   ],
-  "unapplied": [
+  "unapplied": [],
+  "hidden": [
     "ci"
   ],
-  "hidden": [],
   "patches": {
     "ci": {
       "oid": "69ad586630030c1e0627e1864b60dcfb4ec64c67"
